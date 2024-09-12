@@ -24,7 +24,7 @@ Both users should have the initial password "Admin123" for AWS Management Consol
 2. Click "Create group"
 3. Enter "DevOps" as the User group name
 4. In the Attach permissions policies section, search for and select "AdministratorAccess"
-5. Click "Create group"
+5. Click "Create user group"
 
 ![DevOps Group Creation Confirmation](imgs/1.DevOps_Group_Create.png)
 
@@ -33,7 +33,7 @@ Both users should have the initial password "Admin123" for AWS Management Consol
 2. Click "Create group"
 3. Enter "Staff" as the User group name
 4. In the Attach permissions policies section, search for and select "ReadOnlyAccess"
-5. Click "Create group"
+5. Click "Create user group"
 
 ![Staff Group Creation Confirmation](imgs/3.Staff_Group_Creation.png)
 
