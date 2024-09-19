@@ -175,3 +175,19 @@ During the implementation of this project, the following challenge was encounter
 ![Ofagbule Website Parking](imgs/16.parking_page.png)
 
 This issue manifested as a "parking page" being displayed instead of the expected website content in Chrome and Safari.
+
+## Solution
+
+After investigating the issue, the following solution was found:
+
+- Updating the Name server details on the domain provider to point to the Name server details provided by Route 53 resolved the issue for Google Chrome browser.
+
+**Current Status:**
+- The website now displays correctly on Google Chrome.
+- The issue persists on Safari browser.
+
+### Key Takeaways
+
+1. **Importance of Name Servers**: Ensure that your domain's Name servers at your domain registrar match those provided by Route 53. This is a crucial step in the DNS configuration process.
+
+2. **Browser Differences**: Different browsers may behave differently with DNS resolution and caching. In this case, Chrome responded to the changes while Safari did not.
