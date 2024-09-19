@@ -45,6 +45,8 @@ After creating your EC2 instance:
 
    Replace `"your-keyname.pem"` with your actual key file name and `public_IP_address` with your instance's public IP.
 
+![Connect to Ec2 Instance](imgs/2.public_ip.png)
+
 > **Important**: Ensure your key file is not publicly accessible by running:
 > 
 > ```
@@ -53,4 +55,67 @@ After creating your EC2 instance:
 
 ### 3. Install Apache Web server
 
-- Once connected to your EC2 instance, install Apache (instructions to be added)
+Once connected to your EC2 instance:
+
+1. Update system packages:
+   ```
+   sudo yum update -y
+   ```
+
+2. Install Apache:
+   ```
+   sudo yum install httpd -y
+   ```
+
+3. Start Apache service:
+   ```
+   sudo systemctl start httpd
+   ```
+
+4. Verify Apache status:
+   ```
+   sudo systemctl status httpd
+   ```
+
+   ![Apache running](imgs/4.apache_status.png)
+
+5. Test Apache installation by entering your EC2 IP address in a web browser. You should see the Apache test page:
+
+   ![Apache test page](imgs/5.apache_test_page.png)
+
+   If you can't see this page, ensure port 80 is open in your security group settings.
+
+### 4. Deploy static website
+
+1. Open your Terminal/Git Bash and navigate to where you have the source code.
+
+2. Copy the source code to your EC2 instance:
+   ```
+   scp -i ~/.ssh/your-keyname.pem -r ~/path/to/Cloudhight_static-website-example/* ec2-user@your_ec2_ip:/home/ec2-user/
+   ```
+   Replace `your-keyname.pem`, `path/to`, and `your_ec2_ip` with your actual values.
+
+3. SSH back into your instance and confirm the files are there:
+   
+   ![Display files copied](imgs/6.website_files.png)
+
+4. Copy everything to Apache's web root:
+   ```
+   sudo cp -r . /var/www/html/
+   ```
+
+5. Verify files have been copied:
+   
+   ![Display files html folder](imgs/7.files_html_folder.png)
+
+6. Restart Apache:
+   ```
+   sudo systemctl restart httpd
+   ```
+
+7. Access your website by entering your EC2 public IP in a web browser:
+
+   ![Display website](imgs/8.cloudhight_website.png)
+
+If you can see this page, you have successfully deployed the application.
+
