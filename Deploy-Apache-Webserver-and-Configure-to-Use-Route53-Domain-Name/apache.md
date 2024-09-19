@@ -119,3 +119,59 @@ Once connected to your EC2 instance:
 
 If you can see this page, you have successfully deployed the application.
 
+### 5. Configure domain name (optional)
+
+#### Create Hosted Zone
+
+1. On the AWS Console, go to Route 53.
+2. Select "Create Hosted Zone".
+3. Enter your domain name (e.g., ofagbule.co.uk).
+4. Select "Public hosted zone".
+5. Click "Create hosted zone".
+
+![Hosted Zone Creation](imgs/9.hosted_zone_create.png)
+
+#### Create Record
+
+1. Click on "Create record".
+2. Enter your EC2 instance's public IP address in the "Value" section.
+3. Click "Create records".
+
+![Records Creation](imgs/10.create_records.png)
+
+![Records Display](imgs/11.display_records.png)
+
+#### Test the Record
+
+You can test the record to confirm if your IP address is correctly connected to your domain name:
+
+![Records Display](imgs/12.test_record_1.png)
+
+![Records Display](imgs/13.test_record_2.png)
+
+![Records Display](imgs/14.test_record_3.png)
+
+#### Access Your Website Using the Domain Name
+
+Now, you can access your website by entering your domain name in a web browser:
+
+![Ofagbule Website](imgs/15.ofagbule_website.png)
+
+Congratulations! You have now successfully configured Route 53 with your Apache server.
+
+## Troubleshooting
+
+- If you can't access the Apache test page or your website, check that port 80 is open in your EC2 security group.
+- Ensure that the Apache service is running using `sudo systemctl status httpd`.
+- Check Apache error logs at `/var/log/httpd/error_log` for any issues.
+- If your domain is not resolving, double-check your Route 53 configuration and ensure that your domain's nameservers are correctly set at your domain registrar.
+
+## Challenges Faced
+
+During the implementation of this project, the following challenge was encountered:
+
+- Inability to access the webpage via Google Chrome and Safari browsers, while Mozilla Firefox worked correctly.
+
+![Ofagbule Website Parking](imgs/16.parking_page.png)
+
+This issue manifested as a "parking page" being displayed instead of the expected website content in Chrome and Safari.
