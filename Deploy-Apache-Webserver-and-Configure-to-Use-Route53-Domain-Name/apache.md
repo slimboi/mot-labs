@@ -178,16 +178,29 @@ This issue manifested as a "parking page" being displayed instead of the expecte
 
 ## Solution
 
-After investigating the issue, the following solution was found:
+After investigating the issue, the following solution was implemented:
 
-- Updating the Name server details on the domain provider to point to the Name server details provided by Route 53 resolved the issue for Google Chrome browser.
+- Updating the Name server details on the domain provider to point to the Name server details provided by Route 53 resolved the issue for Google Chrome browser initially.
 
-**Current Status:**
-- The website now displays correctly on Google Chrome.
-- The issue persists on Safari browser.
+**Final Outcome:**
+- After 24 hours, the website displayed correctly on all browsers, including Safari.
 
 ### Key Takeaways
 
 1. **Importance of Name Servers**: Ensure that your domain's Name servers at your domain registrar match those provided by Route 53. This is a crucial step in the DNS configuration process.
 
-2. **Browser Differences**: Different browsers may behave differently with DNS resolution and caching. In this case, Chrome responded to the changes while Safari did not.
+2. **DNS Propagation Time**: DNS changes can take up to 24-48 hours to fully propagate across all systems. Patience is key when making DNS changes.
+
+3. **Browser Differences**: Different browsers may behave differently with DNS resolution and caching. In this case, Chrome responded to the changes more quickly than Safari.
+
+### Best Practices
+
+1. **Plan Ahead**: When making DNS changes, allow for up to 48 hours of potential downtime or inconsistent behavior.
+
+2. **Verify Multiple Browsers**: Always test your website on multiple browsers to ensure consistent behavior.
+
+3. **Clear Cache**: Regularly clear browser caches and local DNS caches during testing to ensure you're seeing the most up-to-date version of your site.
+
+4. **Document Changes**: Keep a record of all DNS changes made, including timestamps. This can be invaluable for troubleshooting and understanding propagation timelines.
+
+Remember, DNS propagation times can vary, and patience is often the best tool in your troubleshooting kit when dealing with DNS-related issues.
