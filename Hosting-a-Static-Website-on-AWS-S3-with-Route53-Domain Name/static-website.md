@@ -160,7 +160,7 @@ Click on Update Name Server Details.
 
 Note: This may take a little time to propagate across the internet but eventually it should work.
 
-![Name Servers Update](imgs/11.nameservers.png)
+![Name Servers Update](imgs/12.name_server_update.png)
 
 Now go to your browser and type in your domain name. Congratulations! You've just configured your static website with Route 53.
 
