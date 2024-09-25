@@ -102,7 +102,7 @@ Automating processes is a cornerstone of cloud computing. This solution automati
 3. Monitor the Lambda function execution:
    - Search for CloudWatch in the search bar
    - Click on the drop-down for Logs and select "Log groups"
-   - Click on the Log group
+   - Click on the Log groups
 
 ![Log Groups](imgs/7.log_groups.png)
 
@@ -132,7 +132,8 @@ Automating processes is a cornerstone of cloud computing. This solution automati
 
 6. Access the transcription output:
    - Click the meeting-audio-1285 link to open it in a new window
-   - You will see a new folder named transcripts/ created by transcribe. Click on this folder
+   - You will see a new folder named "transcripts/" created by transcribe. 
+   - Click on this folder
 
 ![Transcripts_folder](imgs/13.transcripts.png)
 
