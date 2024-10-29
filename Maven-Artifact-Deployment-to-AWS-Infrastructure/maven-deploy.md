@@ -136,6 +136,7 @@ scp -i my_key_pair.pem usteam/target/spring-petclinic-2.4.2.war ec2-user@<produc
 
 3. Verify deployment:
 ```bash
+ssh -i my_key_pair.pem ec2-user@<production-server-ip>
 ls -al
 ```
 
