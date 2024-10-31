@@ -107,6 +107,13 @@ terraform apply
 
 ![App Running](imgs/7.app_running.png)
 
+### Step 7: Cleanup
+
+When you're done, destroy the infrastructure:
+```bash
+terraform destroy -auto-approve
+```
+
 ## 🛠️ Troubleshooting
 
 Common issues and solutions:
