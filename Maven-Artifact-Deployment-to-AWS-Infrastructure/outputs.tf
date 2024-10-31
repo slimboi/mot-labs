@@ -45,18 +45,11 @@ output "prod-security_group_id" {
 }
 
 output "maven-server" {
-  description = "Public IP address of the control node"
+  description = "Public IP address of the maven server"
   value       = aws_instance.maven-server.public_ip
 }
 
 output "prod-server" {
-  description = "Public IP address of the Ubuntu managed node"
+  description = "Public IP address of the production server"
   value       = aws_instance.prod-server.public_ip
 }
-
-/*
-output "redhat_managed_node_public_ip" {
-  description = "Public IP address of the Red Hat managed node"
-  value       = aws_instance.redhat_managed_node.public_ip
-}
-*/
