@@ -1,0 +1,36 @@
+pipeline {
+    agent any
+    stages {
+        stage('code checkout') {
+            steps {
+                git branch: 'main',
+                url: 'https://github.com/CloudHight/usteam.git'
+            }
+        }
+        stage('test') {
+            steps {
+                sh 'mvn test'
+            }
+        }
+        stage('package') {
+            steps {
+                sh 'mvn clean package'
+            }
+        }
+        stage('deployment') {
+            steps {
+                sshagent(['prodkey']) {
+                    sh 'ssh -t -t ec2-user@YOUR_PROD_IP -o strictHostKeyChecking=no rm -rvf /tmp/app.war'
+                    sh "scp -o StrictHostKeyChecking=no **/*.war ec2-user@YOUR_PROD_IP:/tmp/app.war"
+                }
+            }
+        }
+        stage('start application') {
+            steps {
+                sshagent(['prodkey']) {
+                    sh 'ssh -t -t ec2-user@YOUR_PROD_IP -o strictHostKeyChecking=no nohup java -jar /tmp/app.war &'
+                }
+            }
+        }
+    }
+}
