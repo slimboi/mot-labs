@@ -121,6 +121,15 @@ terraform apply      # Apply the configuration
 
 ---
 
+### **Step 4: Cleanup Resources**
+
+To avoid unnecessary costs, clean up resources after completing your testing or deployment. Run the following command to destroy all resources:
+```bash
+# Remove infrastructure
+terraform destroy -auto-approve
+```
+This will remove all provisioned infrastructure, including EC2 instances, security groups, and the VPC.
+
 ## 📄 **Notes**
 
 - **Security Groups**: Ensure the following ports are open:
