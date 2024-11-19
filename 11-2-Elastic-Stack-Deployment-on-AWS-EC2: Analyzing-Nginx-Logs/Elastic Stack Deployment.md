@@ -133,3 +133,4 @@ This will remove all provisioned infrastructure, including EC2 instances, securi
   ```bash
   ssh -i <YOUR_KEY.pem> ubuntu@<INSTANCE_PUBLIC_IP>
   ```
+
