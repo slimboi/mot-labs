@@ -65,4 +65,5 @@ Replace `<sha1sum-PID>` with the actual process ID
 
 ![EC2 Terminated Instance](imgs/30.terminated_instance.png)
 
-Remember to delete all resources created once done testing.
+### 7. Cleanup Resources
+To avoid unnecessary costs, clean up resources after completing your testing.
